@@ -6,17 +6,22 @@ The basis of the prompt is the file [`scittle-basic.html`](./scittle-basic.html)
 
 # Prompt
 
-> I would like you to create a simple web app using Scittle, a ClojureScript interpreter for the browser. An example Scittle HTML file implementation is below.
-> Scittle largely follows ClojureScript conventions. The Reagent library is available for rendering the interface with React.
-> You may also use the Promesa library for handling promises. For example, a fetch request could be performed as follows:
-> 
-> (p/let [req (js/fetch "https//example.com/api.json")
-          json (when (aget req "ok") (.json req))]
-          ; do something with the resulting JSON here
-          ; or handle nil when the request fails
-          )
-> 
-> Please write an application that ... [YOUR APPLICATION DESCRIPTION HERE]
-> 
-> [PASTED CONTENTS OF scittle-basic.html HERE]
+```
+I would like you to create a simple web app using Scittle, a ClojureScript interpreter for the browser. An example Scittle HTML file implementation is below.
+Scittle largely follows ClojureScript conventions. The Reagent library is available for rendering the interface with React.
+You may also use the Promesa library for handling promises. For example, a fetch request could be performed as follows:
+
+(p/let [req (js/fetch "https//example.com/api.json")
+        json (when (aget req "ok") (.json req))]
+        ; do something with the resulting JSON here
+        ; or handle nil when the request fails
+        )
+
+Please don't customize the CSS uneccessarily as concrete.css provides sensible defaults in both light and dark mode.
+If you need to add colours to something bear in mind they should work against both light and dark backgrounds.
+
+Please write an application that ... [YOUR APPLICATION DESCRIPTION HERE]
+
+[PASTED CONTENTS OF scittle-basic.html HERE]
+```
 
