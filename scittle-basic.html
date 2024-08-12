@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scittle basic example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/concrete.css/3.0.0/concrete.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scittle/0.6.17/scittle.min.js" type="application/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scittle/0.6.17/scittle.reagent.min.js" type="application/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scittle/0.6.17/scittle.promesa.min.js" type="application/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+    <script type="application/x-scittle">
+      (require
+        '[reagent.core :as r]
+        '[reagent.dom :as rdom])
+
+      (def state (r/atom {:clicks 0}))
+
+      (defn my-component []
+       [:div
+        [:p "Clicks: " (:clicks @state)]
+        [:p [:button {:on-click #(swap! state update :clicks inc)}
+             "Click me!"]]])
+
+      (rdom/render [my-component] (.getElementById js/document "app"))
+    </script>
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+      .loader {
+        border-left: 3px solid transparent; border-radius: 50%; width: 3em; height: 3em;
+        margin: 3em auto; animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"><div class="loader"></div></div>
+  </body>
+</html>
