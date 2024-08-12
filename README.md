@@ -1,4 +1,4 @@
-A prompts for Claude AI to generate ClojureScript + Reagent apps.
+A prompt for Claude AI to generate ClojureScript + Reagent apps.
 
 Now that Borkdude's [Scittle](https://github.com/babashka/scittle/) ClojureScript interpreter for the browser is available on cdnjs, we can use Claude AI to generate simple web apps written in ClojureScript. Please apply all the usual AI generation caveats, warnings, and disclaimers as you please.
 
