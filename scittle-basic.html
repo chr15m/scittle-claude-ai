@@ -4,10 +4,10 @@
     <title>Scittle basic example</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/concrete.css/3.0.0/concrete.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scittle/0.6.17/scittle.min.js" type="application/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scittle/0.6.17/scittle.reagent.min.js" type="application/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scittle/0.6.17/scittle.promesa.min.js" type="application/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scittle/0.6.17/scittle.reagent.min.js" type="application/javascript"></script>
     <script type="application/x-scittle">
       (require
         '[reagent.core :as r]
@@ -26,8 +26,8 @@
     <style>
       body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
       .loader {
-        border-left: 3px solid transparent; border-radius: 50%; width: 3em; height: 3em;
-        margin: 3em auto; animation: spin 1s linear infinite;
+        border: 3px solid transparent; border-left: 3px solid var(--fg); border-radius: 50%;
+        width: 3em; height: 3em; margin: 3em auto; animation: spin 0.5s linear infinite;
       }
       @keyframes spin {
         0% { transform: rotate(0deg); }
