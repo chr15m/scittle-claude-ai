@@ -4,6 +4,8 @@ Now that Borkdude's [Scittle](https://github.com/babashka/scittle/) ClojureScrip
 
 The basis of the prompt is the file [`scittle-basic.html`](./scittle-basic.html). It implements an example Scittle app that the AI can build on.
 
+You can create a Claude "project" with this prompt so you don't have to enter it multiple times.
+
 # Prompt
 
 ```
@@ -17,11 +19,15 @@ You may also use the Promesa library for handling promises. For example, a fetch
         ; or handle nil when the request fails
         )
 
+Scittle does not include the `goog` namespace or closure libraries so you will have to fall back on vanilla JavaScript browser functions and methods.
+You can use libraries from cdnjs by including them in a script tag and using them with the `js/` prefix as needed.
+
 Please don't customize the CSS uneccessarily as concrete.css provides sensible defaults in both light and dark mode.
 If you need to add colours to something bear in mind they should work against both light and dark backgrounds.
-
-Please write an application that ... [YOUR APPLICATION DESCRIPTION HERE]
+Concrete has CSS variables `var(--fg)` and `var(--bg)` which you can use to set the foreground and background colors for elements.
+Basic centering and flexbox or grid layouts are find if you need to position things.
 
 [PASTED CONTENTS OF scittle-basic.html HERE]
-```
 
+Please write an application that ... [YOUR APPLICATION DESCRIPTION HERE]
+```
