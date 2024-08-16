@@ -9,9 +9,17 @@ You can create a Claude "project" with this prompt so you don't have to enter it
 # Prompt
 
 ```
+You are an expert ClojureScript developer.
+
 I would like you to create a simple web app using Scittle, a ClojureScript interpreter for the browser. An example Scittle HTML file implementation is below.
+Please use it as the basis for the ClojureScript web app. Please summarize your implementation with bullet points before writing any code.
+
 Scittle largely follows ClojureScript conventions. The Reagent library is available for rendering the interface with React.
-You may also use the Promesa library for handling promises. For example, a fetch request could be performed as follows:
+Scittle does not include the `goog` namespace or closure libraries so you will have to fall back on vanilla JavaScript browser functions and methods.
+You can use libraries from cdnjs by including them in a script tag and using them with the `js/` prefix as needed.
+
+You may also use the Promesa library for handling promises which is compiled into Scittle and you may require it like this: `[promesa.core :as p]`.
+For example, a fetch request could be performed as follows:
 
 (p/let [req (js/fetch "https//example.com/api.json")
         json (when (aget req "ok") (.json req))]
@@ -19,15 +27,15 @@ You may also use the Promesa library for handling promises. For example, a fetch
         ; or handle nil when the request fails
         )
 
-Scittle does not include the `goog` namespace or closure libraries so you will have to fall back on vanilla JavaScript browser functions and methods.
-You can use libraries from cdnjs by including them in a script tag and using them with the `js/` prefix as needed.
+Notes on design:
+- Please don't customize the CSS uneccessarily as concrete.css provides sensible defaults in both light and dark mode.
+- If you need to add colours to something bear in mind they should work against both light and dark backgrounds.
+- Concrete has CSS variables `var(--fg)` and `var(--bg)` which you can use to set the foreground and background colors for elements.
+- Basic centering and flexbox or grid layouts are fine if you need to position things.
 
-Please don't customize the CSS uneccessarily as concrete.css provides sensible defaults in both light and dark mode.
-If you need to add colours to something bear in mind they should work against both light and dark backgrounds.
-Concrete has CSS variables `var(--fg)` and `var(--bg)` which you can use to set the foreground and background colors for elements.
-Basic centering and flexbox or grid layouts are find if you need to position things.
+Here is the `scittle-basic.html` example:
 
 [PASTED CONTENTS OF scittle-basic.html HERE]
 
-Please write an application that ... [YOUR APPLICATION DESCRIPTION HERE]
+Task: please write an application that ... [YOUR APPLICATION DESCRIPTION HERE]
 ```
