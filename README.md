@@ -27,6 +27,9 @@ For example, a fetch request could be performed as follows:
         ; or handle nil when the request fails
         )
 
+If you need to use a non-React library to do something inside a mounted element you can access elements with the `:ref` attribute.
+It takes a function like `(fn [el] ...)` where el is the dom element that was mounted, or `nil` if the dom element was unmounted.
+
 Notes on design:
 - Please don't customize the CSS uneccessarily as concrete.css provides sensible defaults in both light and dark mode.
 - If you need to add colours to something bear in mind they should work against both light and dark backgrounds.
