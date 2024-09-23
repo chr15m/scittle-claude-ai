@@ -32,6 +32,8 @@ For example, a fetch request could be performed as follows:
         ; or handle nil when the request fails
         )
 
+Since the app will be run as an Artifact, note that the same restrictions apply. Some browser APIs such as `localStorage` are blocked by CSP senttings so do not use them.
+
 Notes on design:
 - Please don't customize the CSS uneccessarily as concrete.css provides sensible defaults in both light and dark mode.
 - If you need to add colours to something bear in mind they should work against both light and dark backgrounds.
